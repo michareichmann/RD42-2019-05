@@ -1,0 +1,34 @@
+\section{Integration}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FRAME 0 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Integration}
+\begin{frame}{Region and Range}
+
+	\only<1>{\fig[r]{.4}{I0}\vspace*{.1\textheight}}
+	\only<2>{\fig[r]{.4}{I1}\vspace*{.1\textheight}}
+	\only<3>{\fig[r]{.5}{I2}}
+	\only<4>{\fig[r]{.5}{I3}}
+	\only<5>{\fig[r]{.5}{I4}}
+	\only<6>{\fig[r]{.5}{I5}}
+	\only<7>{\fig[r]{.5}{I6}}
+	
+	
+	\begin{itemize}\itemfill
+		\item<2-> define signal region: one bunch wide (\SI{20}{\nano\second}) around the triggered signal
+		\item<4-> find the peak within the signal region by max value
+		\item<5-> signal: integrate asymmetrically around the peak (optimisation by SNR)
+		\item<6-> pedestal: same integration window in centre of pre-trigger bunch
+	\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FRAME 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Integration}
+	
+	\vspace*{-15pt}\fig[r]{.6}{I7}
+	
+	\begin{itemize}\itemfill
+		\item integration performed on time corrected waveform 
+		\item single bin integral: ($w$) times the mean of the two values: $w\cdot(v1 + v2) / 2$
+		\item sum up the single integrals + interpolated edges to get the exact integration width
+		\item normalise by the width of the integral
+	\end{itemize}
+ 
+\end{frame}
