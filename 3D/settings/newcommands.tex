@@ -9,6 +9,8 @@
 \newcommand{\good}[1]{{\textcolor{ForestGreen}{\textbf{#1}}}}
 \newcommand{\bad}[1]{\textcolor{RedOrange}{\textbf{#1}}}
 \newcommand{\dead}[1]{\textcolor{NavyBlue}{\textbf{#1}}}
+\newcommand{\fadeout}[1]{\textcolor{gray!50}{#1}}
+\newcommand{\fat}[1]{{\usebeamercolor[fg]{title}\textbf{#1}}}
 \newcommand{\cmark}{\good{\ding{51}}}
 \newcommand{\xmark}{\bad{\ding{55}}}
 \newcommand{\itemfill}{\setlength{\itemsep}{\fill}}
@@ -38,8 +40,7 @@
 	\begin{wrapfigure}{#1}{#2\linewidth}\includegraphics[width={.95\linewidth}]{#3}\caplab{#4}{#5}\end{wrapfigure}}
 \DeclareDocumentCommand{\nicetab}{m m O{nocap} O{nolab}}{
 	\begin{table}\centering\alternatecolors
-		\begin{tabular}{#1}\rowcolor{darkgray!20}\noalign{\hrule height 1.3pt}
-			#2
+		\begin{tabular}{#1}\rowcolor{darkgray!20}\noalign{\hrule height 1.3pt} #2
 			\noalign{\hrule height 1.3pt}
 		\end{tabular}
 		\caplab{#3}{#4}

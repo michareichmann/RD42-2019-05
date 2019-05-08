@@ -1,0 +1,58 @@
+\section{Pulse Height Calibration}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FRAME 0 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Pixel Unit Cell}
+\begin{frame}{Pixel Unit Cell}
+
+	\fig{.5}{PUC}
+	
+	\begin{itemize}\itemfill
+		\item inject calibration signal ($\sim$\,vcal) through sensor into same circuit as real signals
+		\item shaping, amplification, threshold check
+		\item set amplification offset
+		\item convert to \SI{8}{bit} adc value with adjustable scale \ra readout
+	\end{itemize}
+	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FRAME 0 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Tuning and Calibration}
+\begin{frame}{ADC Calibration}
+	
+	
+	\vspace*{-10pt}
+	\subfigs{\subfig{.5}[r]{AdcCal}[ADC calibration for single pixel.]}{\subfig{.5}[r]{AdcCalFit}[Error function fit.]}
+
+	\begin{itemize}\itemfill 
+		\item measure adc values for calibration pulses with different vcal
+		\item adc follows error function and saturates for high vcal
+		\item fit every pixel and save fit parameters
+		\item adjust adc offset and range with DACs of the chip
+	\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FRAME 0 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Tuning and Calibration}
+\begin{frame}{Vcal Calibration}
+	
+	\def\d{.295}
+	\only<1>{
+		\begin{minipage}{.48\textwidth}
+			\subfigs{\subfig{\d}{Zn}[Zn target.]}{\subfig{\d}{Mo}[Mo target.]}\vspace*{9.1ex}
+		\end{minipage}
+		\begin{minipage}{.48\textwidth}
+			\subfigs{\subfig{\d}{Ag}[Ag target.]}{\subfig{\d}{Sn}[Sn target.]}\vspace*{9.1ex}
+		\end{minipage}}
+	\only<2>{\fig{.4}{VcalCal}[Vcal Calibration.]}
+
+	\begin{itemize}\itemfill 
+		\item<1-> measure energy spectra of $K_{\alpha}$ lines of four metal targets using ADC-calibration
+		\item<2-> linear dependence of energy [e] and vcal 
+		\item<2-> fit $K_{\alpha}$ points with straight line (similar for each chip)
+		\item<2-> impossible to do calibration with diamond (energy too low)
+		\begin{itemize}
+			\item<2-> use general value from silicon: $\z{e} = 47.5\cdot vcal + \SI{500}{e}$
+		\end{itemize}
+	\end{itemize}
+
+\end{frame}
