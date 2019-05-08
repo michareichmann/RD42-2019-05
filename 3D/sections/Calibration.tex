@@ -44,14 +44,15 @@
 			\subfigs{\subfig{\d}{Ag}[Ag target.]}{\subfig{\d}{Sn}[Sn target.]}\vspace*{9.1ex}
 		\end{minipage}}
 	\only<2>{\fig{.4}{VcalCal}[Vcal Calibration.]}
-
+	\only<3>{\subfigs{\subfig{.439}[r]{VS}[Vcal slopes.]}{\subfig{.439}[r]{VO}[Vcal offsets.]}\vspace*{-2ex}}
+	
 	\begin{itemize}\itemfill 
 		\item<1-> measure energy spectra of $K_{\alpha}$ lines of four metal targets using ADC-calibration
 		\item<2-> linear dependence of energy [e] and vcal 
 		\item<2-> fit $K_{\alpha}$ points with straight line (similar for each chip)
 		\item<2-> impossible to do calibration with diamond (energy too low)
 		\begin{itemize}
-			\item<2-> use general value from silicon: $\z{e} = 47.5\cdot vcal + \SI{500}{e}$
+			\item<3-> use general values from silicon: $\z{e} = 46.5\cdot vcal$
 		\end{itemize}
 	\end{itemize}
 
