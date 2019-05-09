@@ -20,13 +20,14 @@
 	
 	
 	\vspace*{-10pt}
-	\subfigs{\subfig{.5}[r]{AdcCal}[ADC calibration for single pixel.]}{\subfig{.5}[r]{AdcCalFit}[Error function fit.]}
+	\only<1>{\fig[r]{.5}{AdcCal}[ADC calibration for single pixel.]}
+	\only<2>{\fig[r]{.5}{AdcCalFit}[ADC calibration for single pixel with error function fit.]}
 
 	\begin{itemize}\itemfill 
-		\item measure adc values for calibration pulses with different vcal
-		\item adc follows error function and saturates for high vcal
-		\item fit every pixel and save fit parameters
-		\item adjust adc offset and range with DACs of the chip
+		\item<1-> measure adc values for calibration pulses with different vcal
+		\item<1-> adc follows error function and saturates for high vcal
+		\item<2> fit every pixel and save fit parameters
+		\item<2> adjust adc offset and range with DACs of the chip
 	\end{itemize}
 
 \end{frame}
