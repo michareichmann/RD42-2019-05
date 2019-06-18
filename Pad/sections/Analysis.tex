@@ -41,7 +41,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FRAME 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Distribution after Alignment}
 
-	\subfigs{\subfig{.5}[r]{C2X}}{\subfig{.5}{C2A}}
+	\subfigs{\subfig{.5}{C2X}}{\subfig{.5}{C2A}}
 	
 	\begin{itemize}\itemfill
 		\item fit function: [0]*TMath::GammaDist($x$, $k/2$, 0, $\theta = 2$)
@@ -98,4 +98,38 @@
 		\item normalise by the width of the integral
 	\end{itemize}
  
+\end{frame}\section{Analysis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FRAME 0 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Event Cuts}
+\begin{frame}{Cuts}
+
+	\nicetab{ll}{ \good{Cut} & \good{Excluded Events} 														\\\hline
+	saturated						& saturated waveforms 	\\
+	pulser							& pulser (reference) events 	\\
+	event range					& first minute of the run due to various beam conditions 	\\
+	beam interruptions	& during rate changes of the beam due to beam interruption\\
+	pedestal sigma			& baseline offsets, strange waveforms 	\\
+	timing 							& wrong timing of the peak of triggered signal  	\\
+	bucket							& flat waveforms due to wrong trigger 	\\
+	aligned 						& Waveforms and Telescope are not aligned (event-wise)					\\
+	tracks							& not all telescope planes have exactly one cluster				\\
+	chi2 (x/y)					& badly fit tracks (\SI{>50}{\%\, quantile})							\\
+	track slope (x/y)		& large angles of the tracks (\SI{>2}{deg})								\\
+	fiducial						& not in selected (fiducial) area of the DUT							\\
+	}[Analysis cut flow.]\vspace*{-6ex}
+	
+% 	\begin{minipage}{.6\textwidth}
+% 		\begin{itemize}
+% 			\item cuts applied in order of the table
+% 			\item largest contribution usually by chi2, tracks and fiducial cuts
+% 		\end{itemize}
+% 	\end{minipage}\hfill
+% 	\begin{minipage}{.3\textwidth}
+% 		\fig[r]{.38}{CutPie}
+% 	\end{minipage}
+
+
+
+	
 \end{frame}
+
